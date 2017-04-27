@@ -10,7 +10,7 @@ from field import Field, Game
 
 class MyField(Field):
     def __init__(self, parent):
-        super().__init__(parent, 10, 10)  #CHANGE SIZE HERE
+        super().__init__(parent, 8, 10)  #CHANGE SIZE HERE
         self.direction = 'down'
         
     def onCellClicked(self, x, y):

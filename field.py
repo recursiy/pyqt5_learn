@@ -66,7 +66,7 @@ class Field(QFrame):
         self.timer.start(500, self)
         
     def clear_field(self):
-        self.field = np.zeros((self.height, self.width), bool)
+        self.field = np.zeros((self.width, self.height), bool)
         
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -75,11 +75,11 @@ class Field(QFrame):
         pen = QPen(Qt.black, 1, Qt.SolidLine)
         painter.setPen(pen)
         #show width-1 horizontal lines
-        for i in range(1, self.height):
+        for i in range(1, self.width):
             painter.drawLine(i*self.CELL_WIDTH, 0, i*self.CELL_WIDTH, self.height*self.CELL_HEIGHT)
         
         #show height-1 vertical lines
-        for i in range(1, self.width):
+        for i in range(1, self.height):
             painter.drawLine(0, i*self.CELL_HEIGHT, self.width*self.CELL_WIDTH, i*self.CELL_HEIGHT)
         
         painter.setFont(QFont('Decorative', 20))
